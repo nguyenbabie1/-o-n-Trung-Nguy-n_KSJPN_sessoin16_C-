@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-void sigma();
+void sigmaboy();
 
 int main() {
     sigma();
     return 0;
 }
 
-void sigma() {
+void sigmaboy() {
     char *arr; 
     int size = 50; 
     arr = (char *)malloc(size * sizeof(char));
@@ -24,7 +24,7 @@ void sigma() {
     arr[strcspn(arr, "\n")] = '\0';
    
     for (int i = 0; i < strlen(arr); i++) {
-        printf("%c: %d\t", arr[i], arr[i]);
+        printf("%c\t",  arr[i]);
     }
 
 
