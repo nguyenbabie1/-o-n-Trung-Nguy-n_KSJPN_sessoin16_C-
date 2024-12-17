@@ -1,18 +1,32 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char arr[50];
-int main(){
-	void sigma();
-	sigma();
-	return 0;
+void sigma();
+
+int main() {
+    sigma();
+    return 0;
 }
 
-void sigma(){
-	char *x = arr;
-	printf("Moi ban nhap : ");
-	fgets(arr, 50, stdin);
-	for(int i = 0; i < strlen(arr) - 1; i++){
-		printf("%d\t", x[i]);
-	}
+void sigma() {
+    char *arr; 
+    int size = 50; 
+    arr = (char *)malloc(size * sizeof(char));
+    if (arr == NULL) {
+        printf("Khong the cap phat bo nho!\n");
+        return;
+    }
+
+    printf("Moi ban nhap: ");
+    fgets(arr, size, stdin);
+
+    arr[strcspn(arr, "\n")] = '\0';
+   
+    for (int i = 0; i < strlen(arr); i++) {
+        printf("%c: %d\t", arr[i], arr[i]);
+    }
+
+
+    free(arr);
 }
